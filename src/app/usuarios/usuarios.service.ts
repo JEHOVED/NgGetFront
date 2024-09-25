@@ -8,14 +8,16 @@ import { Observable } from 'rxjs';
 export class UsuariosService {
   private readonly _http = inject(HttpClient);
   
-  private urlApi = 'http://localhost:3000/users/todos';
+  private urlApi = 'http://localhost:3000/users';
   constructor( private http: HttpClient) { }
 
 
-  public getData(): Observable<any>{
-
-    var retorno = this.http.get<any>(this.urlApi);
+  public getTodosUsuarios(): Observable<any>{
+    var retorno = this.http.get<any>(this.urlApi + '/todos');
     console.log("retorno", retorno);
     return retorno;
   }
+
+
+
 }
