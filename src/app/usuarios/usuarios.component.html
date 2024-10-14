@@ -1,86 +1,46 @@
 <h1>LISTADO DE USUARIOS</h1>
-<hr>
-<br>
-<br>
+<hr />
+<br />
+<br />
 <div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-8">
-        <form class="row g-2">
-            <div class="col-md-4">
-            <label for="validationServer01" class="form-label">Nombres</label>
-            <input type="text" class="form-control" [(ngModel)]="Nombres" required>
-            <div class="valid-feedback">
-                {{Nombres}}
-            </div>
-            </div>
-            <div class="col-md-4">
-            <label for="validationServer02" class="form-label">Apellidos</label>
-            <input type="text" class="form-control" [(ngModel)]="Apellidos" required>
-            <div class="valid-feedback">
-                {{Apellidos}}
-            </div>
-            </div>
-            <div class="col-md-2">
-                <label for="validationServer01" class="form-label">Edad</label>
-            <input type="number" class="form-control" [(ngModel)]="Edad" required>
-            <div class="valid-feedback">
-                {{Edad}}
-            </div>
-            </div>
-            <div class="col-md-6">
-            <label for="validationServer03" class="form-label">Dirección</label>
-            <input type="text" class="form-control" [(ngModel)]="Direccion" required>
-            <div id="validationServer03Feedback" class="">
-                {{Direccion}}
-            </div>
-            </div>
-            
-            <div class="col-md-4">
-                <label for="validationServer01" class="form-label">Correo Electrónico</label>
-            <input type="text" class="form-control" [(ngModel)]="Correo" required>
-            <div class="valid-feedback">
-                {{Correo}}
-            </div>
-            </div>
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+      <input type="text" [(ngModel)]="Nombres" />
+      <input type="text" [(ngModel)]="Apellidos" />
+      <input type="text" [(ngModel)]="Direccion" />
+      <input type="text" [(ngModel)]="Edad" />
+      <input type="text" [(ngModel)]="Correo" />
+      <button type="submit" (click)="agregarUsuario()" class="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg w-full sm:w-auto px-5 py-2.5 text-center">Submit
+      </button>
+  </div>
+  <div class="col-md-2"></div>
 
-            <div class="col-12">
-            <button class="btn btn-primary" (click)="AgregarUsuario()">Agregar</button>
-            </div>
-            <br>
-            <br>
-            <br>
-        </form>
-    </div>
-    <div class="col-md-2"></div>
-    
-    <br><br>
-    <hr>
-    <div class="col-md-1"></div>
-    <div class="col-md-10">
-        <table class="table">
-            <thead class="thead-dark">
-                <tr>
-                    <th>ID</th>
-                    <th>Nombres</th>
-                    <th>Apellidos</th>
-                    <th>Dirección</th>
-                    <th>Edad</th>
-                    <th>Correo</th>
-                </tr>
-                
-            </thead>
-            <tbody>
-                <tr *ngFor="let usuario of listadoUsuarios">
-                    <td>{{usuario.Id}}</td>
-                    <td>{{usuario.Nombres}}</td>
-                    <td>{{usuario.Apellidos}}</td>
-                    <td>{{usuario.Direccion}}</td>
-                    <td>{{usuario.Edad}}</td>
-                    <td>{{usuario.Correo}}</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="col-md-1"></div>
+  <br /><br />
+  <hr />
+  <div class="col-md-1"></div>
+  <div class="col-md-10">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th>ID</th>
+          <th>Nombres</th>
+          <th>Apellidos</th>
+          <th>Dirección</th>
+          <th>Edad</th>
+          <th>Correo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let usuario of listadoUsuarios">
+          <td>{{ usuario.Id }}</td>
+          <td>{{ usuario.Nombres }}</td>
+          <td>{{ usuario.Apellidos }}</td>
+          <td>{{ usuario.Direccion }}</td>
+          <td>{{ usuario.Edad }}</td>
+          <td>{{ usuario.Correo }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-1"></div>
 </div>
-

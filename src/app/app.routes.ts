@@ -3,6 +3,8 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
 
 export const routes: Routes = [
     {
-        path: '', component: UsuariosComponent
-    }
+        path: '', 
+        loadChildren: () => import('./usuarios/usuarios.routes').then(m => m.USUARIO_ROUTES)
+    },
+
 ];

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { UsuariosService } from './usuarios.service';
 import { NgFor } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { bootstrapApplication } from '@angular/platform-browser';
 
 
 @Component({
@@ -21,6 +22,8 @@ export class UsuariosComponent {
   Edad: number = 0;
   Correo: string = '';
 
+  firstName = '';
+
 
   public data: any [] = [];
   public listadoUsuarios : any[] = [];
@@ -32,7 +35,7 @@ export class UsuariosComponent {
   cargarTodosUsuarios(){
     this.servicio.getTodosUsuarios().subscribe(data=>{
       this.listadoUsuarios = data;
-      console.log("usuarios cargados", this.data);
+      
     })
   }
 
